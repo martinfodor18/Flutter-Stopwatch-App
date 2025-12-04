@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import '../../../infrastructure/controller/stopwatch/stopwatch_controller.dart';
 import '../../../infrastructure/controller/stopwatch/stopwatch_state.dart';
 import '../../../translation/locale_keys.g.dart';
-import '../../app_color.dart';
+import '../../theme/app_color.dart';
 import '../../common/primary_button.dart';
+import '../../theme/app_spacing.dart';
 
 class StopwatchButtons extends StatelessWidget {
   final StopwatchState state;
@@ -33,7 +34,7 @@ class StopwatchButtons extends StatelessWidget {
                 leadingIcon: const Icon(Icons.play_arrow),
               ),
             ),
-            const SizedBox(width: 16),
+            const SizedBox(width: AppSpacing.medium),
             Flexible(
               child: PrimaryButton(
                 key: const Key('pause_button'),
@@ -54,7 +55,7 @@ class StopwatchButtons extends StatelessWidget {
           ],
         ),
 
-        const SizedBox(height: 16),
+        const SizedBox(height: AppSpacing.medium),
 
         Row(
           children: [
@@ -69,7 +70,7 @@ class StopwatchButtons extends StatelessWidget {
                 leadingIcon: const Icon(Icons.refresh),
               ),
             ),
-            const SizedBox(width: 16),
+            const SizedBox(width: AppSpacing.medium),
             Flexible(
               child: PrimaryButton(
                 key: const Key('lap_button'),

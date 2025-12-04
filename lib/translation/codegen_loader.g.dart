@@ -6,7 +6,7 @@ import 'dart:ui';
 
 import 'package:easy_localization/easy_localization.dart' show AssetLoader;
 
-class CodegenLoader extends AssetLoader{
+class CodegenLoader extends AssetLoader {
   const CodegenLoader();
 
   @override
@@ -14,31 +14,34 @@ class CodegenLoader extends AssetLoader{
     return Future.value(mapLocales[locale.toString()]);
   }
 
-  static const Map<String,dynamic> _en = {
-  "dark_mode": "Dark mode",
-  "language": "Language",
-  "lap": "Lap",
-  "lap_time": "Lap time:",
-  "pause": "Pause",
-  "reset": "Reset",
-  "resume": "Resume",
-  "settings": "Settings",
-  "start": "Start",
-  "stopwatch": "Stopwatch",
-  "total_time": "Total time:"
-};
-static const Map<String,dynamic> _hu = {
-  "dark_mode": "Sötét mód",
-  "language": "Nyelv",
-  "lap": "Kör",
-  "lap_time": "Köridő:",
-  "pause": "Szünet",
-  "reset": "Visszaállít",
-  "resume": "Folytatás",
-  "settings": "Beállítások",
-  "start": "Indít",
-  "stopwatch": "Stopperóra",
-  "total_time": "Teljes idő:"
-};
-static const Map<String, Map<String,dynamic>> mapLocales = {"en": _en, "hu": _hu};
+  static const Map<String, dynamic> _en = {
+    "dark_mode": "Dark mode",
+    "language": "Language",
+    "lap": "Lap",
+    "lap_time": "Lap time:",
+    "pause": "Pause",
+    "reset": "Reset",
+    "resume": "Resume",
+    "settings": "Settings",
+    "start": "Start",
+    "stopwatch": "Stopwatch",
+    "total_time": "Total time:",
+  };
+  static const Map<String, dynamic> _hu = {
+    "dark_mode": "Sötét mód",
+    "language": "Nyelv",
+    "lap": "Kör",
+    "lap_time": "Köridő:",
+    "pause": "Szünet",
+    "reset": "Visszaállít",
+    "resume": "Folytatás",
+    "settings": "Beállítások",
+    "start": "Indít",
+    "stopwatch": "Stopperóra",
+    "total_time": "Teljes idő:",
+  };
+  static const Map<String, Map<String, dynamic>> mapLocales = {
+    "en": _en,
+    "hu": _hu,
+  };
 }

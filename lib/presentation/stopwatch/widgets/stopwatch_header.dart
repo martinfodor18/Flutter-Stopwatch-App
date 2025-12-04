@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_stopwatch_app/presentation/stopwatch/widgets/stopwatch_analog_clock.dart';
-import 'package:flutter_stopwatch_app/presentation/stopwatch/widgets/stopwatch_buttons.dart';
 
 import '../../../infrastructure/controller/stopwatch/stopwatch_state.dart';
 import '../../../utils/time_formatter.dart';
+import '../../theme/app_spacing.dart';
+import '../../theme/app_theme.dart';
 
 class StopwatchHeader extends StatelessWidget {
   final StopwatchState state;
@@ -16,27 +17,18 @@ class StopwatchHeader extends StatelessWidget {
       children: [
         Text(
           formatStopwatchTime(state.actualTotalTime),
-          style: const TextStyle(
-            fontFamily: 'GoogleSansFlex',
-            fontSize: 45,
-            fontWeight: .bold,
-            fontFeatures: [.tabularFigures()],
-          ),
+          style: AppTheme.counterLarge,
         ),
 
-        const SizedBox(height: 10),
+        const SizedBox(height: AppSpacing.small),
 
         if (state.previousLaps.isNotEmpty)
           Text(
             formatStopwatchTime(state.actualLapTime),
-            style: const TextStyle(
-              fontFamily: 'GoogleSansFlex',
-              fontSize: 20,
-              fontFeatures: [.tabularFigures()],
-            ),
+            style: AppTheme.counterSmall,
           ),
 
-        const SizedBox(height: 20),
+        const SizedBox(height: AppSpacing.normal),
 
         StopwatchClock(totalTime: state.actualTotalTime),
       ],

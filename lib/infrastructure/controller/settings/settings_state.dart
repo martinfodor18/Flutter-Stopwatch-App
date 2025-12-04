@@ -5,15 +5,11 @@ part 'settings_state.freezed.dart';
 
 @freezed
 abstract class SettingsState with _$SettingsState {
-  const factory SettingsState({
-    required bool isDark,
-    required Locale locale,
-  }) = _SettingsState;
+  const factory SettingsState({required bool isDark, required Locale locale}) =
+      _SettingsState;
 
-  factory SettingsState.initial() => const SettingsState(
-    isDark: false,
-    locale: Locale("hu"),
-  );
+  factory SettingsState.initial() =>
+      const SettingsState(isDark: false, locale: Locale("hu"));
 
   const SettingsState._();
 }

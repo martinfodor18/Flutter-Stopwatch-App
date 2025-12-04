@@ -1,5 +1,6 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_stopwatch_app/presentation/theme/app_spacing.dart';
 
 class PrimaryButton extends StatelessWidget {
   final VoidCallback? onPressed;
@@ -31,8 +32,7 @@ class PrimaryButton extends StatelessWidget {
         ? Colors.transparent
         : backgroundColor ?? scheme.primary;
 
-    final fg = textColor ??
-        (outlined ? scheme.primary : Colors.white);
+    final fg = textColor ?? (outlined ? scheme.primary : Colors.white);
 
     return SizedBox(
       height: height,
@@ -48,23 +48,17 @@ class PrimaryButton extends StatelessWidget {
                 ? BorderSide(color: scheme.primary, width: 1.5)
                 : BorderSide.none,
           ),
-          textStyle: const TextStyle(
-            fontSize: 18,
-            fontWeight: FontWeight.w600,
-          ),
+          textStyle: Theme.of(context).textTheme.labelLarge,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             if (leadingIcon != null) ...[
               leadingIcon!,
-              const SizedBox(width: 8),
+              SizedBox(width: AppSpacing.extraSmall),
             ],
             Flexible(
-              child: Text(
-                textKey.tr(),
-                overflow: TextOverflow.ellipsis,
-              ),
+              child: Text(textKey.tr(), overflow: TextOverflow.ellipsis),
             ),
           ],
         ),

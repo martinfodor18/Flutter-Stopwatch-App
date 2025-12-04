@@ -8,6 +8,7 @@ import '../../infrastructure/controller/stopwatch/stopwatch_state.dart';
 import '../../infrastructure/provider/stopwatch_provider.dart';
 import '../../translation/locale_keys.g.dart';
 import '../common/page_scaffold.dart';
+import '../theme/app_spacing.dart';
 
 class StopwatchPage extends HookConsumerWidget {
   const StopwatchPage({super.key});
@@ -47,11 +48,11 @@ class StopwatchPage extends HookConsumerWidget {
         constraints: const BoxConstraints(maxWidth: 600),
         child: Column(
           children: [
-            const SizedBox(height: 20),
+            SizedBox(height: AppSpacing.normal),
             StopwatchHeader(state: state),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.normal),
             StopwatchButtons(state: state, controller: controller),
-            const SizedBox(height: 20),
+            const SizedBox(height: AppSpacing.normal),
 
             Expanded(
               child: ListView.separated(
@@ -77,11 +78,11 @@ class StopwatchPage extends HookConsumerWidget {
           constraints: const BoxConstraints(maxWidth: 600),
           child: Column(
             children: [
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.normal),
               StopwatchHeader(state: state),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.normal),
               StopwatchButtons(state: state, controller: controller),
-              const SizedBox(height: 20),
+              const SizedBox(height: AppSpacing.normal),
 
               ListView.separated(
                 shrinkWrap: true,
@@ -90,8 +91,7 @@ class StopwatchPage extends HookConsumerWidget {
                 separatorBuilder: (_, __) => const Divider(height: 1),
                 itemBuilder: (context, i) => _buildLapItem(context, state, i),
               ),
-
-              const SizedBox(height: 40),
+              const SizedBox(height: AppSpacing.large),
             ],
           ),
         ),

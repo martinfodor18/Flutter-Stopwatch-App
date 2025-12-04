@@ -85,15 +85,11 @@ void main() {
         Duration.zero,
         reason: "Reset should clear elapsed time",
       );
+      expect(state.isRunning, false, reason: "Reset should stop the stopwatch");
       expect(
-          state.isRunning,
-          false,
-          reason: "Reset should stop the stopwatch"
-      );
-      expect(
-          state.previousLaps,
-          isEmpty,
-          reason: "Reset should clear all laps"
+        state.previousLaps,
+        isEmpty,
+        reason: "Reset should clear all laps",
       );
     });
   });

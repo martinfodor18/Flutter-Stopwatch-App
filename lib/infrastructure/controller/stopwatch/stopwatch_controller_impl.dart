@@ -8,7 +8,6 @@ import '../../model/lap_time.dart';
 class StopwatchControllerImpl extends StopwatchController {
   StopwatchControllerImpl() : super(StopwatchState.initial());
 
-
   Timer? _timer;
   static const tick = Duration(milliseconds: 30);
 
@@ -20,8 +19,7 @@ class StopwatchControllerImpl extends StopwatchController {
 
     _timer = Timer.periodic(tick, (_) {
       state = state.copyWith(
-        actualTotalTime:
-            state.actualTotalTime + tick,
+        actualTotalTime: state.actualTotalTime + tick,
         actualLapTime: state.actualLapTime + tick,
       );
     });
@@ -42,12 +40,21 @@ class StopwatchControllerImpl extends StopwatchController {
   @override
   void addLap() {
     if (!state.isRunning) return;
-    state = state.copyWith(actualLapTime: Duration.zero, previousLaps: [...state.previousLaps, LapTime(lapTime: state.actualLapTime, totalTime: state.actualTotalTime)]);
+    state = state.copyWith(
+      actualLapTime: Duration.zero,
+      previousLaps: [
+        ...state.previousLaps,
+        LapTime(lapTime: state.actualLapTime, totalTime: state.actualTotalTime),
+      ],
+    );
   }
 
   @override
   void clearLaps() {
-    state = state.copyWith(actualLapTime: state.actualTotalTime, previousLaps: []);
+    state = state.copyWith(
+      actualLapTime: state.actualTotalTime,
+      previousLaps: [],
+    );
   }
 
   @override

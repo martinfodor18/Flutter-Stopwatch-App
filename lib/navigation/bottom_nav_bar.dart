@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../presentation/settings/settings_page.dart';
 import '../presentation/stopwatch/stopwatch_page.dart';
+import '../presentation/theme/app_radius.dart';
 import 'nav_index_provider.dart';
 
 class BottomNavBar extends ConsumerWidget {
@@ -17,15 +18,12 @@ class BottomNavBar extends ConsumerWidget {
     return Scaffold(
       body: IndexedStack(
         index: index,
-        children: const [
-          StopwatchPage(),
-          SettingsPage(),
-        ],
+        children: const [StopwatchPage(), SettingsPage()],
       ),
       bottomNavigationBar: ClipRRect(
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(24),
-          topRight: Radius.circular(24),
+          topLeft: Radius.circular(AppRadius.extraLarge),
+          topRight: Radius.circular(AppRadius.extraLarge),
         ),
         child: NavigationBar(
           selectedIndex: index,

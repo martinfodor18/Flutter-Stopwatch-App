@@ -1,8 +1,8 @@
-import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import '../app_color.dart';
+import '../theme/app_color.dart';
+import '../theme/app_spacing.dart';
 
 class PageScaffold extends HookConsumerWidget {
   final Widget body;
@@ -18,18 +18,13 @@ class PageScaffold extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    context.locale; // Trigger rebuild on locale change
     return Scaffold(
       appBar: AppBar(
-        title: Text(appBarTitleKey.tr()),
+        title: Text("Stopwatch"),
         backgroundColor: AppColor.brandGreen,
-        titleTextStyle: TextStyle(
-          color: AppColor.white,
-          fontSize: 24,
-          fontWeight: FontWeight.bold,
-        ),
+        titleTextStyle: Theme.of(context).textTheme.titleLarge
       ),
-      body: Padding(padding: const .all(8.0), child: body),
+      body: Padding(padding: const .all(AppSpacing.extraSmall), child: body),
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );

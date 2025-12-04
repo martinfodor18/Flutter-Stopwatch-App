@@ -15,9 +15,7 @@ class AppInitializer {
       const SystemUiOverlayStyle(statusBarColor: Colors.transparent),
     );
 
-    SystemChrome.setPreferredOrientations([
-      DeviceOrientation.portraitUp,
-    ]);
+    SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
 
     return EasyLocalization(
       supportedLocales: const [Locale('hu'), Locale('en')],

@@ -2,7 +2,7 @@
 
 // ignore_for_file: constant_identifier_names
 
-abstract class  LocaleKeys {
+abstract class LocaleKeys {
   static const dark_mode = 'dark_mode';
   static const language = 'language';
   static const lap = 'lap';
@@ -14,5 +14,4 @@ abstract class  LocaleKeys {
   static const start = 'start';
   static const stopwatch = 'stopwatch';
   static const total_time = 'total_time';
-
 }

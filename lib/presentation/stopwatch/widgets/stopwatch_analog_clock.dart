@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:one_clock/one_clock.dart';
 
-import '../../app_color.dart';
-import '../../app_image.dart';
+import '../../theme/app_color.dart';
+import '../../common/app_image.dart';
 
 class StopwatchClock extends StatelessWidget {
   final Duration totalTime;

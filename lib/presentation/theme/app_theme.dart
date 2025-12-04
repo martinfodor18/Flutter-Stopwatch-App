@@ -19,18 +19,18 @@ class AppTheme {
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColor.navBarBackgroundLight,
         indicatorColor: Colors.transparent,
-        labelTextStyle: MaterialStateProperty.resolveWith((states) {
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
           return TextStyle(
-            color: states.contains(MaterialState.selected)
+            color: states.contains(WidgetState.selected)
                 ? AppColor.brandGreen
                 : AppColor.navBarInactiveItemLight,
             fontWeight: FontWeight.w600,
             fontSize: 12,
           );
         }),
-        iconTheme: MaterialStateProperty.resolveWith((states) {
+        iconTheme: WidgetStateProperty.resolveWith((states) {
           return IconThemeData(
-            color: states.contains(MaterialState.selected)
+            color: states.contains(WidgetState.selected)
                 ? AppColor.brandGreen
                 : AppColor.navBarInactiveItemLight,
             size: 26,
@@ -56,18 +56,18 @@ class AppTheme {
       navigationBarTheme: NavigationBarThemeData(
         backgroundColor: AppColor.navBarBackgroundDark,
         indicatorColor: Colors.transparent,
-        labelTextStyle: MaterialStateProperty.resolveWith((states) {
+        labelTextStyle: WidgetStateProperty.resolveWith((states) {
           return TextStyle(
-            color: states.contains(MaterialState.selected)
+            color: states.contains(WidgetState.selected)
                 ? AppColor.brandGreen
                 : AppColor.navBarInactiveItemDark,
             fontWeight: FontWeight.w600,
             fontSize: 12,
           );
         }),
-        iconTheme: MaterialStateProperty.resolveWith((states) {
+        iconTheme: WidgetStateProperty.resolveWith((states) {
           return IconThemeData(
-            color: states.contains(MaterialState.selected)
+            color: states.contains(WidgetState.selected)
                 ? AppColor.brandGreen
                 : AppColor.navBarInactiveItemDark,
             size: 26,
@@ -82,38 +82,21 @@ class AppTheme {
     fontWeight: FontWeight.bold,
   );
 
-  static const TextStyle lapItemTotalTimeTextStyle = TextStyle(
-    fontSize: 12,
+  static const TextStyle lapItemTotalTimeTextStyle = TextStyle(fontSize: 12);
+
+  static const TextStyle counterLarge = TextStyle(
+    fontSize: 45,
+    fontWeight: .bold,
+    fontFeatures: [.tabularFigures()],
+  );
+
+  static const TextStyle counterSmall = TextStyle(
+    fontSize: 20,
+    fontFeatures: [.tabularFigures()],
   );
 
   static const TextTheme _textTheme = TextTheme(
-    displayLarge: TextStyle(
-      fontSize: 56,
-      fontWeight: FontWeight.w700,
-    ),
-    displayMedium: TextStyle(
-      fontSize: 42,
-      fontWeight: FontWeight.w600,
-    ),
-    headlineMedium: TextStyle(
-      fontSize: 28,
-      fontWeight: FontWeight.w600,
-    ),
-    titleLarge: TextStyle(
-      fontSize: 20,
-      fontWeight: FontWeight.w600,
-    ),
-    bodyLarge: TextStyle(
-      fontSize: 16,
-      height: 1.2,
-    ),
-    bodyMedium: TextStyle(
-      fontSize: 14,
-      height: 1.2,
-    ),
-    labelLarge: TextStyle(
-      fontSize: 14,
-      fontWeight: FontWeight.w600,
-    ),
+    titleLarge: TextStyle(fontSize: 24, fontWeight: .bold, color: AppColor.white),
+    labelLarge: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
   );
 }

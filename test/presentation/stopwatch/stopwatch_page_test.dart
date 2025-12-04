@@ -112,11 +112,11 @@ void main() {
       ProviderScope(child: MaterialApp(home: StopwatchPage())),
     );
 
-    final startBtn = find.byKey(const Key('start_button'));
+    final startButton = find.byKey(const Key('start_button'));
     final lapButton = find.byKey(const Key('lap_button'));
     final resetButton = find.byKey(const Key('reset_button'));
 
-    await tester.tap(startBtn);
+    await tester.tap(startButton);
     await tester.pump(const Duration(milliseconds: 50));
 
     await tester.tap(lapButton);
@@ -187,8 +187,7 @@ void main() {
     // FAB is conditionally rendered, so tap() may not hit it.
     // Calling onPressed directly is the reliable option:
     final fab = tester.widget<FloatingActionButton>(clearLapsButton);
-    fab.onPressed
-        ?.call();
+    fab.onPressed?.call();
     await tester.pump();
 
     final stateAfter = container.read(stopwatchControllerProvider);
@@ -202,6 +201,7 @@ void main() {
   // ---------------------------------------------------------------------------
 
   testWidgets('Pressing start multiple times does not break behavior', (
+    // TODO: Add tests for additional edge cases.
     WidgetTester tester,
   ) async {
     await tester.pumpWidget(

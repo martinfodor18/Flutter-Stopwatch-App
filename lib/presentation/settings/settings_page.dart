@@ -18,7 +18,6 @@ class SettingsPage extends HookConsumerWidget {
       appBarTitleKey: LocaleKeys.stopwatch,
       body: ListView(
         children: [
-
           //Theme switch
           SwitchListTile(
             title: Text(LocaleKeys.dark_mode.tr()),
@@ -39,18 +38,11 @@ class SettingsPage extends HookConsumerWidget {
                 context.setLocale(newLocale);
               },
               items: const [
-                DropdownMenuItem(
-                  value: Locale('en'),
-                  child: Text('English'),
-                ),
-                DropdownMenuItem(
-                  value: Locale('hu'),
-                  child: Text('Magyar'),
-                ),
+                DropdownMenuItem(value: Locale('en'), child: Text('English')),
+                DropdownMenuItem(value: Locale('hu'), child: Text('Magyar')),
               ],
             ),
           ),
-
         ],
       ),
     );

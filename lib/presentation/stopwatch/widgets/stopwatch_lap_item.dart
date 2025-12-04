@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../infrastructure/model/lap_time.dart';
 import '../../../translation/locale_keys.g.dart';
 import '../../../utils/time_formatter.dart';
-import '../../app_theme.dart';
+import '../../theme/app_theme.dart';
 
 class StopwatchLapItem extends StatelessWidget {
   final LapTime lap;
