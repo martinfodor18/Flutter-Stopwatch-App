@@ -1,9 +1,10 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 import '../app_color.dart';
 
-class PageScaffold extends StatelessWidget {
+class PageScaffold extends HookConsumerWidget {
   final Widget body;
   final String appBarTitleKey;
   final FloatingActionButton? floatingActionButton;
@@ -16,7 +17,8 @@ class PageScaffold extends StatelessWidget {
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    context.locale; // Trigger rebuild on locale change
     return Scaffold(
       appBar: AppBar(
         title: Text(appBarTitleKey.tr()),
@@ -27,10 +29,7 @@ class PageScaffold extends StatelessWidget {
           fontWeight: FontWeight.bold,
         ),
       ),
-      body: Padding(
-        padding: const .all(8.0),
-        child: body,
-      ),
+      body: Padding(padding: const .all(8.0), child: body),
       floatingActionButton: floatingActionButton,
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
     );
