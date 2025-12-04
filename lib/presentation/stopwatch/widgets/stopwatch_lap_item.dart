@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import '../../../infrastructure/model/lap_time.dart';
 import '../../../translation/locale_keys.g.dart';
 import '../../../utils/time_formatter.dart';
+import '../../theme/app_spacing.dart';
 import '../../theme/app_theme.dart';
 
 class StopwatchLapItem extends StatelessWidget {
@@ -19,7 +20,7 @@ class StopwatchLapItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      contentPadding: EdgeInsets.zero,
+      contentPadding: .symmetric(horizontal: AppSpacing.extraSmall),
       title: Text(
         "${LocaleKeys.lap.tr()} #$index",
         style: AppTheme.lapItemLapTimeTextStyle,
@@ -29,7 +30,7 @@ class StopwatchLapItem extends StatelessWidget {
         style: AppTheme.lapItemLapTimeTextStyle,
       ),
       trailing: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: .center,
         children: [
           Text(
             "${LocaleKeys.total_time.tr()} ${formatStopwatchTime(lap.totalTime)}",
